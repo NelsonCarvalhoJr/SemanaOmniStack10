@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const cors = require('cors')
 const routes = require('./routes')
 
 const app = express()
@@ -9,6 +10,8 @@ mongoose.connect('<string_connection>', {
 	useUnifiedTopology: true
 })
 
+// app.use(cors({ origin: 'http://localhost:3000' }))	// Liberar acesso à URL específica
+app.use(cors())	// Liberar acesso à todas as URLs
 app.use(express.json())
 app.use(routes)
 
