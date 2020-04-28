@@ -21,6 +21,15 @@ mongoose.connect('<string_connection>', {
 })
 ```
 
+Arquivo **./web/src/services/api.js**
+
+```javascript
+// Substituir <ip_backend> pelo IP em que está executando o back-end da aplicação
+const api = axios.create({
+	baseURL: '<ip_backend>',
+})
+```
+
 Arquivo **./mobile/src/services/api.js**
 
 ```javascript
